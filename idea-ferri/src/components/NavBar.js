@@ -1,19 +1,23 @@
 import React from 'react';
 import { Navbar, Nav} from 'react-bootstrap';
-import shop from '../assets/shop.svg';
+import logo from '../assets/logo.png';
+import CartWidget from '../components/CartWidget.js'
 
 function NavBar()  {
     return (
-        <Navbar className="barra" bg="light" expand="lg">
+        <Navbar className="barraLogo" bg="light" expand="lg">
                 <Navbar.Brand href="#home">
-                    <img className="logo d-inline-block align-top" src={shop} />
+                    <img className="logo d-inline-block align-top" src={logo} alt="logo" />
                 </Navbar.Brand>
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mr-auto">
+            <Navbar.Collapse className="barraEnlaces" id="basic-navbar-nav">
+                <Nav>
                     <Nav.Link className="enlaces" href="#home">Home</Nav.Link>
                     <Nav.Link className="enlaces" href="#home">Catálogo</Nav.Link>
                     <Nav.Link className="enlaces" href="#home">Galería</Nav.Link>
                     <Nav.Link className="enlaces" href="#home">Contacto</Nav.Link>
+                    <Nav.Link className="enlaces" href="#home">
+                        <CartWidget />
+                    </Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>               
