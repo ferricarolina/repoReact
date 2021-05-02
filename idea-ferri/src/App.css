@@ -4,32 +4,21 @@
 
 .barraLogo{
   text-align: stretch;
-  background-color: rgb(32, 143, 115);
+  background-color: rgb(23, 104, 83);
+  align-self: center;
+  padding: 10px;
 }
 
 .enlaces{
-  padding: 10px;
+
   display: inline;
   text-decoration: none;
   color: white;
   font-family: 'Quicksand';
-  font-size: 18px;
-  align-self: center;
+  font-size: 20px;
+
 }
 
-.enlaces:hover{
-  color: yellow;
-}
-
-.logo{
-  width: 270px;
-  height: 100px;
-}
-
-.barraEnlaces{
-  background-color: black;
-  padding: 10px;
-}
 .icon{
   width: 25px;
   height: 25px;
@@ -44,8 +33,4 @@
 h1,
 h3{
   padding: 10px;
-}
-
-.imgHome {
-  border-radius: 70px;
 }

@@ -1,19 +1,18 @@
 import React from 'react';
-import home from '../assets/home.jpg'
-
+import ItemCountF from '../components/ItemCountF'
+import Container from 'react-bootstrap/Container'
 
 const ItemListContainer = props => {
 
     const greeting = <h1>¡Bienvenido a CellShop!</h1>
     const subtitulo = <h3>Somos especialistas en telefonía móvil y líderes en el mercado. No te pierdas nuestras ofertas!</h3>
-    const imagenHome =  <img className="imgHome" src={home} />
 
     return (
-        <div>
+        <Container fluid className="p-3">
             {greeting}
             {subtitulo}
-            {imagenHome}
-        </div>
+            <ItemCountF/>
+        </Container>
         )
 }
 
