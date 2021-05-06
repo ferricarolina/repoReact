@@ -34,3 +34,16 @@ h1,
 h3{
   padding: 10px;
 }
+
+.itemList{
+  font-family: 'Quicksand';
+  font-size: 14px;
+  text-align: justify;
+}
+
+.price{
+  font-family: 'Quicksand';
+  font-size: 30px;
+  text-align: center;
+  font-weight: bolder;
+}

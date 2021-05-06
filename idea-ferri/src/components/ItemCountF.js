@@ -33,15 +33,15 @@ function ItemCountF() {
             <Row>
                 <Col>
                     <ButtonGroup className="p-3" aria-label="botonera">
-                        <Button onClick={decrementar} variant="primary" size="lg">-</Button>
-                        <Button variant="primary" size="lg" disabled>{contador}</Button>
-                        <Button onClick={incrementar} variant="primary" size="lg">+</Button>
+                        <Button onClick={decrementar} variant="primary" size="s">-</Button>
+                        <Button variant="primary" size="s" disabled>{contador}</Button>
+                        <Button onClick={incrementar} variant="primary" size="s">+</Button>
                     </ButtonGroup>
                 </Col>
             </Row>
             <Row>
                 <Col>
-                    <Button variant="success" size="lg">Agregar al carrito</Button>
+                    <Button variant="success" size="s">Agregar al carrito</Button>
                 </Col>
             </Row>
         </Container>
