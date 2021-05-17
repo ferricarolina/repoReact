@@ -12,13 +12,11 @@ const ItemListContainer = props => {
       setData(result);
     }, []);
 
-    const greeting = <h1>¡Bienvenido a CellShop!</h1>
-    const subtitulo = <h3>Somos especialistas en telefonía móvil y líderes en el mercado. No te pierdas nuestras ofertas!</h3>
+    const title = <h1 className="titulo">Ultimos lanzamientos</h1>
 
     return (
-        <Container fluid className="p-3">
-            {greeting}
-            {subtitulo}
+        <Container fluid className="p-4">
+            {title}
             {data}
         </Container>
     )
