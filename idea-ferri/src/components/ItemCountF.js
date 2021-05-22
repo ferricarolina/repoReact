@@ -25,7 +25,7 @@ const useContadorStock = (inicial, stock) => {
     return {contador, incrementar, decrementar}
 }
 
-function ItemCountF() {
+function ItemCountF(props) {
     const { contador, incrementar, decrementar } = useContadorStock(1, 5)
 
     return (
@@ -41,7 +41,7 @@ function ItemCountF() {
             </Row>
             <Row>
                 <Col>
-                    <Button variant="success" size="s">Agregar al carrito</Button>
+                    <Button variant="primary" size="s" onClick={() => props.onClick(contador)}>Agregar al carrito</Button>
                 </Col>
             </Row>
         </Container>

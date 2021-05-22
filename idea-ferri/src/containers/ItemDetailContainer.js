@@ -12,9 +12,8 @@ const ItemDetailContainer = props => {
    
     useEffect(() => {
         getItem(id).then(result => {
-            ItemDetail(result).then( detail => {
-                setData(detail);
-            })
+            const detail = <ItemDetail item={result}/>
+            setData(detail);
         })
     }, []);
 

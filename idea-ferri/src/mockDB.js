@@ -23,7 +23,7 @@ function mockItems() {
     var promise = new Promise(function(resolve, reject) {
       setTimeout(function() {
         resolve(
-            db.filter(item => item.id == id)[0]
+            db.filter(item => item.id.toString() === id)[0]
         );
       }, 2000);
     });
