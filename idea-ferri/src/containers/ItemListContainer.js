@@ -5,11 +5,15 @@ import ItemList from '../components/ItemList'
 const ItemListContainer = props => {
 
     const [data, setData] = useState();
+    const id = ''
    
-    useEffect(async () => {
-      const result = await ItemList();
-   
-      setData(result);
+    useEffect(() => {
+        async function fetchData() {
+            const result = await ItemList(id);
+         
+            setData(result);
+        }
+        fetchData()
     }, []);
 
     const title = <h1 className="titulo">Ultimos lanzamientos</h1>

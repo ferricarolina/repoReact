@@ -1,10 +1,10 @@
-import {Card, Container, Button} from 'react-bootstrap'
-import '../App.css';
+import { Card, Container } from 'react-bootstrap'
+import LinkedButton from './LinkedButton'
 
 function Item (item) {
 
     const { id, pictureUrl, title, price } = item
-    const href = "./ItemDetailContainer/" + id
+    const link = "./ItemDetailContainer/" + id
 
     return (
             <Container fluid>
@@ -14,7 +14,7 @@ function Item (item) {
                         <Card.Title>{title}</Card.Title>
                         <Card.Text className="price">{price}</Card.Text>
                     </Card.Body>
-                        <Button href={href} variant="primary" size="s">Ver producto</Button>
+                        <LinkedButton link={link} variant="primary" size="s" message='Ver producto'></LinkedButton>
                 </Card>
           </Container>
         )

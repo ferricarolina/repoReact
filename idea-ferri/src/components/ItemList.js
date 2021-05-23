@@ -14,7 +14,7 @@ async function ItemList (itemList){
         <Table>
             <tbody>
                 <tr>
-                    {list.map(i => <td>{Item(i)}</td>)}
+                    {list.map(i => <td key={i.id}>{Item(i)}</td>)}
                 </tr>
             </tbody>
         </Table>

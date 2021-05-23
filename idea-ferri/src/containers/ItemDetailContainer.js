@@ -15,9 +15,8 @@ const ItemDetailContainer = props => {
             const detail = <ItemDetail item={result}/>
             setData(detail);
         })
-    }, []);
+    }, [id]);
 
-            
     return (
         <Container fluid className="p-3">
             {data}

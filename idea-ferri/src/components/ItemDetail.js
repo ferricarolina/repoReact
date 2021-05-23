@@ -1,19 +1,23 @@
-import { useState } from 'react';
-import '../App.css';
+import { useContext, useState } from 'react';
+import { Card, Container, Col, Row} from 'react-bootstrap'
+import { CartContext } from '../context/cartContext';
 import ItemCountF from './ItemCountF'
-import { Button, Card, Container, Col, Row} from 'react-bootstrap'
+import LinkedButton from './LinkedButton'
 
-function ItemDetail (props){
+function ItemDetail ({item}){
 
-    const { id, pictureUrl, title, price, description } = props.item
+    const cart = useContext(CartContext)
+    
+    const { pictureUrl, title, price, description, stock } = item
 
     const [items, setItems] = useState(0);
-
-    const href = "/cart"
-    const button = <Button className="m-3" variant="success" size="s" href={href}>Termina tu compra</Button>
+    
+    const link = '/Cart'
+    const button = <LinkedButton className="m-3" variant="success" size="s" link={link} message='Termina tu compra'></LinkedButton>
 
     function onAdd(quantityToAdd){
         setItems(quantityToAdd)
+        cart.addToCart({item:item, quantity:quantityToAdd})
     }
 
     return (
@@ -32,7 +36,7 @@ function ItemDetail (props){
                 <Col><Card.Text className="titulo">Oferta lanzamiento {price}</Card.Text></Col>
             </Row>
             <Row>
-                <Col>{ items ? button : <ItemCountF onClick={onAdd}/> }</Col>
+                <Col>{ items ? button : <ItemCountF onClick={onAdd} stock={stock}/> }</Col>
             </Row>
             
         </Container>
