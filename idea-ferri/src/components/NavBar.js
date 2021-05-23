@@ -17,11 +17,13 @@ function NavBar()  {
                     alt="React Bootstrap logo"
                 />
             </Navbar.Brand>
+            <Navbar.Collapse id="basic-navbar-nav" className="justify-content-between">
             <Nav className="mr-auto">
                 <Nav.Link className="enlaces" as={Link} to="/Home">Home</Nav.Link>
                 <Nav.Link className="enlaces" as={Link} to="/ItemListContainer">Catálogo</Nav.Link>
-                <Nav.Link className="enlaces" as={Link} to="/"><CartWidget /> </Nav.Link>
             </Nav>
+            <Nav.Link className="enlaces" as={Link} to="/Cart"><CartWidget /> </Nav.Link>
+            </Navbar.Collapse>
         </Navbar>
         )           
 }

@@ -8,13 +8,13 @@ function Item (item) {
 
     return (
             <Container fluid>
-                <Card className="p-3" style={{ width: '18rem' }}>
+                <Card className="text-center p-3" style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={pictureUrl} />
                     <Card.Body>
                         <Card.Title>{title}</Card.Title>
-                        <Card.Text className="price">{price}</Card.Text>
+                        <Card.Text className="price">${price}</Card.Text>
                     </Card.Body>
-                        <LinkedButton link={link} variant="primary" size="s" message='Ver producto'></LinkedButton>
+                        <LinkedButton className="buttonsCart" link={link} message='Ver producto'></LinkedButton>
                 </Card>
           </Container>
         )

@@ -4,6 +4,8 @@ export const CartContext = createContext()
 
 export default function CartProvider({ defaultValue = [], children }) {
     const [items, setItems] = useState(defaultValue)
+        
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
     
     function getFromCart(id){
         return items.find(itemAndQuantity => itemAndQuantity.item.id === id)
@@ -33,7 +35,19 @@ export default function CartProvider({ defaultValue = [], children }) {
         setItems([])
     }
 
-    return <CartContext.Provider value={{ items, getFromCart, isInCart, addToCart, removeFromCart, clearCart, itemsSize:items.lenght}}>
+    function totalPrice(){
+        if(items.length === 0)  return 0 
+
+        return items.map(iq => iq.item.price * iq.quantity).reduce(reducer);
+    }
+
+    function totalItems(){
+        if(items.length === 0)  return 0 
+
+        return items.map(iq => 1 * iq.quantity).reduce(reducer);
+    }
+
+    return <CartContext.Provider value={{ items, getFromCart, isInCart, addToCart, removeFromCart, clearCart, totalPrice, totalItems, itemsSize:items.length}}>
         {children}
     </CartContext.Provider>
 }

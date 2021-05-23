@@ -13,11 +13,14 @@ function ItemDetail ({item}){
     const [items, setItems] = useState(0);
     
     const link = '/Cart'
-    const button = <LinkedButton className="m-3" variant="success" size="s" link={link} message='Termina tu compra'></LinkedButton>
+    const button = <LinkedButton className="buttonsCart m-3" variant="success" size="s" link={link} message='Termina tu compra'></LinkedButton>
 
     function onAdd(quantityToAdd){
         setItems(quantityToAdd)
-        cart.addToCart({item:item, quantity:quantityToAdd})
+        if(quantityToAdd === 0){
+            return
+        }
+            cart.addToCart({item:item, quantity:quantityToAdd})
     }
 
     return (
@@ -33,7 +36,7 @@ function ItemDetail ({item}){
                 </Col>
             </Row>
             <Row>
-                <Col><Card.Text className="titulo">Oferta lanzamiento {price}</Card.Text></Col>
+                <Col><Card.Text className="titulo">Oferta lanzamiento $ {price}</Card.Text></Col>
             </Row>
             <Row>
                 <Col>{ items ? button : <ItemCountF onClick={onAdd} stock={stock}/> }</Col>

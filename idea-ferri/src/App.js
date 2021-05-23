@@ -10,16 +10,16 @@ import Cart from './components/Cart'
 function App() {
   return (
     <BrowserRouter>
+      <CartProvider>
         <NavBar/>
         <Switch>
-          <CartProvider>
             <Route exact path="/Home" component={Home}/>
             <Route exact path="/ItemListContainer" component={ItemListContainer}/>
             <Route exact path="/ItemDetailContainer/:id" component={ItemDetailContainer}/>
             <Route exact path="/Cart" component={Cart}/>
-          </CartProvider>
         </Switch>
-     </BrowserRouter>
+      </CartProvider>
+    </BrowserRouter>
   );
 }
 

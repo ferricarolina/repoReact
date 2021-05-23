@@ -19,6 +19,17 @@
 
 }
 
+.notificacion{
+
+  display: inline;
+  text-decoration: none;
+  color: yellow;
+  font-family: 'Quicksand';
+  font-size: 20px;
+  font-weight: bolder;
+
+}
+
 .icon{
   width: 25px;
   height: 25px;
@@ -76,4 +87,11 @@ h3{
 .rowCart {
   text-align: center;
   align-self: baseline;
+}
+
+.buttonsCart{
+  width: 250px;
+  height: 48px;
+  border-radius: 10px;
+  font-family: 'Quicksand'; 
 }
