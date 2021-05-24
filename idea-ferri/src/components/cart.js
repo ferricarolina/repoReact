@@ -46,10 +46,10 @@ function Cart (){
                     <Col>${cart.totalPrice()}</Col>
                 </Row>
                 <Row className="text-center mt-5">
-                    <Col><LinkedButton className="btn buttonsCart m-5" variant="outline-primary" size="lg" link={link} message='Seguir comprando'></LinkedButton></Col>
+                    <Col><LinkedButton variant="outline-primary" size="lg" className="btn buttonsCart m-5" link={link} message='Seguir comprando'></LinkedButton></Col>
                     <Col></Col>
                     <Col><Button variant="outline-danger" size="lg" className="btn buttonsCart m-5" onClick={() => clearItems()}>Vaciar Carrito</Button></Col>
-                    <Col><Button variant="success" size="lg" className="btn buttonsCart m-5">Finalizar y pagar</Button></Col>
+                    <Col><LinkedButton variant="success" size="lg" className="btn buttonsCart m-5" link={'/BuyForm'} message='Finalizar y pagar'></LinkedButton></Col>
                 </Row>
             </div>}
         </Container>

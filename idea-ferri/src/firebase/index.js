@@ -22,3 +22,38 @@ export function getFirebase() {
 export function getFirestore() {
     return firebase.firestore(app)
 }
+
+
+//Callback custom functions
+export function consultar(consulta){
+    var promise = new Promise(function(resolve, reject) {
+        consulta.get().then((query) => {
+            if(query.size === 0){
+                console.log('No results!')
+            }
+            console.log('Items found!')
+            const data = query.docs.map(doc => doc.data())
+            resolve(data)
+        }).catch((error) => {
+            console.log('Error serching items', error)
+            reject(error)
+        })
+    });
+    return promise;
+}
+
+export function agregar(collection, data){
+    
+    data.date = firebase.firestore.Timestamp.fromDate(new Date())
+    
+    var promise = new Promise(function(resolve, reject) {
+        collection.add(data).then(({id}) => {
+            console.log('New item created!')
+            resolve(id)
+        }).catch((error) => {
+            console.log('Error creating item: ', error)
+            reject(error)
+        })
+    });
+    return promise;
+}

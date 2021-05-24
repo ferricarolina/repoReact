@@ -47,7 +47,11 @@ export default function CartProvider({ defaultValue = [], children }) {
         return items.map(iq => 1 * iq.quantity).reduce(reducer);
     }
 
-    return <CartContext.Provider value={{ items, getFromCart, isInCart, addToCart, removeFromCart, clearCart, totalPrice, totalItems, itemsSize:items.length}}>
+    function buyerItems(){
+        return items.map(iq => iq = {id:iq.item.id, title:iq.item.title, price:iq.item.price, quantity:iq.quantity})
+    }
+
+    return <CartContext.Provider value={{ items, getFromCart, isInCart, addToCart, removeFromCart, clearCart, totalPrice, totalItems, buyerItems, itemsSize:items.length}}>
         {children}
     </CartContext.Provider>
 }

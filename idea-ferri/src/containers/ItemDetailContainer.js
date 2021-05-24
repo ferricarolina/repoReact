@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {Container} from 'react-bootstrap'
 import ItemDetail from '../components/ItemDetail'
 import { useParams } from 'react-router-dom'
-import { getItem } from '../firebase/items'
+import { getCollectionItemById } from '../firebase/crud'
 
 const ItemDetailContainer = props => {
 
@@ -11,7 +11,7 @@ const ItemDetailContainer = props => {
     const [data, setData] = useState();
    
     useEffect(() => {
-        getItem('items', id).then(item => {
+        getCollectionItemById('items', id).then(item => {
             const detail = <ItemDetail item={item[0]}/>
             setData(detail);
         })

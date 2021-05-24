@@ -7,6 +7,7 @@ import Home from './containers/Home'
 import CartProvider from './context/cartContext'
 import ImageProvider from './context/imagesContext'
 import Cart from './components/Cart'
+import BuyForm from './components/BuyForm'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route exact path="/ItemListContainer" component={ItemListContainer}/>
             <Route exact path="/ItemDetailContainer/:id" component={ItemDetailContainer}/>
             <Route exact path="/Cart" component={Cart}/>
+            <Route exact path="/BuyForm" component={BuyForm}/>
         </Switch>
       </ImageProvider>
       </CartProvider>

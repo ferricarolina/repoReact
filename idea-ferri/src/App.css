@@ -106,3 +106,15 @@ h3{
   transform: scale(1.1,1.1);
   transition-duration: 0.5s;
 }
+
+.compraFinalizada{
+  color:white;
+  background-color: #c2631a;
+  font-family: 'Quicksand';
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-weight: bolder;
+  border-radius: 30px;
+}

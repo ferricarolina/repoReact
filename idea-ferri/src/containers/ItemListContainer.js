@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Form, Row, Col } from 'react-bootstrap'
 import ItemList from '../components/ItemList'
-import { getFilterItems, getItems } from '../firebase/items'
+import { getCollection, getCollectionByFilter } from '../firebase/crud'
 
 const ItemListContainer = props => {
 
@@ -10,9 +10,9 @@ const ItemListContainer = props => {
    
     useEffect(() => {
         marca ?
-            getFilterItems('items', { key:'categoryId', condition:'==', value:marca}).then((items) => {setData(<ItemList items={items}/>)})
+            getCollectionByFilter('items', { key:'categoryId', condition:'==', value:marca}).then((items) => {setData(<ItemList items={items}/>)})
             :
-            getItems('items').then((items) => {setData(<ItemList items={items}/>)})
+            getCollection('items').then((items) => {setData(<ItemList items={items}/>)})
     }, [marca]);
 
     const title = <h1 sm={12} className="titulo">Ultimos lanzamientos</h1>
