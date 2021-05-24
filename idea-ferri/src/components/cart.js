@@ -2,10 +2,12 @@ import { CartContext } from '../context/cartContext';
 import { useContext } from 'react';
 import { Container, Button, Row, Col, Image } from 'react-bootstrap'
 import LinkedButton from './LinkedButton'
+import { ImageContext } from '../context/imagesContext';
 
 function Cart (){
 
     const cart = useContext(CartContext)
+    const img = useContext(ImageContext)
     const link = '/ItemListContainer'
     const emptyCart = <div>
         <div className="titulo">Aún no has agregado items a tu carrito</div>
@@ -30,7 +32,7 @@ function Cart (){
                     <Col></Col>
                 </Row>
                 {cart.items.map(i => <Row className="text-center itemList" key={i.item.id}>
-                    <Col><Image src={i.item.pictureUrl} className='iconCart'></Image></Col>
+                    <Col><Image src={img.getImage(i.item.pictureUrl)} className='iconCart'></Image></Col>
                     <Col className="mt-5">{i.item.title}</Col>
                     <Col className="mt-5"> ${i.item.price}</Col>
                     <Col className="mt-5">{i.quantity} u.

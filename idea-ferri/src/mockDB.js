@@ -30,4 +30,4 @@ function mockItems() {
     return promise;
  }
 
-export { mockItems, getItem } 
+// export { mockItems, getItem } 

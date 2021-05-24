@@ -3,14 +3,16 @@ import NavBar from './components/NavBar';
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import ItemDetailContainer from './containers/ItemDetailContainer'
 import ItemListContainer from './containers/ItemListContainer'
-import Home from './components/Home'
+import Home from './containers/Home'
 import CartProvider from './context/cartContext'
+import ImageProvider from './context/imagesContext'
 import Cart from './components/Cart'
 
 function App() {
   return (
     <BrowserRouter>
       <CartProvider>
+      <ImageProvider>
         <NavBar/>
         <Switch>
             <Route exact path="/Home" component={Home}/>
@@ -18,6 +20,7 @@ function App() {
             <Route exact path="/ItemDetailContainer/:id" component={ItemDetailContainer}/>
             <Route exact path="/Cart" component={Cart}/>
         </Switch>
+      </ImageProvider>
       </CartProvider>
     </BrowserRouter>
   );

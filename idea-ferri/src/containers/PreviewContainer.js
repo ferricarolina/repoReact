@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container'
+import { Container } from 'react-bootstrap'
 import Preview from '../components/Preview'
 
 const PreviewContainer = props => {
@@ -9,6 +9,7 @@ const PreviewContainer = props => {
     return (
         <Container fluid className="p-3">
             {title}
+
             <Preview/>
         </Container>
     )

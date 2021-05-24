@@ -1,12 +1,14 @@
 import { useContext, useState } from 'react';
 import { Card, Container, Col, Row} from 'react-bootstrap'
 import { CartContext } from '../context/cartContext';
+import { ImageContext } from '../context/imagesContext';
 import ItemCountF from './ItemCountF'
 import LinkedButton from './LinkedButton'
 
 function ItemDetail ({item}){
 
     const cart = useContext(CartContext)
+    const img = useContext(ImageContext)
     
     const { pictureUrl, title, price, description, stock } = item
 
@@ -27,7 +29,7 @@ function ItemDetail ({item}){
         
         <Container fluid className="App">
            <Row>
-                <Col sm={6}><Card.Img variant="top" src={pictureUrl} style={{ width: '22rem' }} /></Col>
+                <Col sm={6}><Card.Img variant="top" src={img.getImage(pictureUrl)} style={{ width: '22rem' }} /></Col>
                 <Col sm={6}>
                     <Card.Body>
                         <Card.Title className="titulo">{title}</Card.Title>

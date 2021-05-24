@@ -2,22 +2,15 @@ import React from 'react';
 import '../App.css';
 import Item from '../components/Item'
 import Container from 'react-bootstrap/Container'
-import { Table } from 'react-bootstrap';
-import { mockItems } from '../mockDB'
+import { Row, Col } from 'react-bootstrap';
 
-async function ItemList (itemList){
-    
-    const list = await mockItems()
+function ItemList ({items}){
 
     return (
-    <Container>   
-        <Table>
-            <tbody>
-                <tr>
-                    {list.map(i => <td key={i.id}>{Item(i)}</td>)}
-                </tr>
-            </tbody>
-        </Table>
+    <Container>
+        <Row>
+            {items.map(i => <Col sm={3} key={i.title}>{<Item item={i}/>}</Col>)}
+        </Row>
     </Container>
     )
 
